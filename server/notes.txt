@@ -1,0 +1,37 @@
+npm = node project manager
+npm start ("start": "node app.js") 
+    - When running the npm start command from the root directory of the project, node will look for a "scripts" object in the package.json file. Once found with the key "start", it will run the command that is specified as it's value.
+
+npm dev (    "dev": "nodemon") 
+    - Indicates that we're running the project in development mode and we're using 'nodemon' to do so.
+    -nodemon allows us to make changes without having to restart the server after each change.
+
+node modules: 
+    - packages that npm installs that allow our application and all of its dependencies to run properly.
+
+package-lock.json
+    - locks in the version of the packages that we're using.
+    - version control system that acts as a failsafe.
+
+Express
+    - lightweight weba pplication framework used to help organize our application into a MVC architecture within our server.
+        - MVC: Model view controller
+    - NOT a model view controller framework by itsself. Still need to use our own ORM (Object Relational Mapping) library.
+        -*Sequelize
+
+.env: environmental file. Allows us to set up environment variables.
+
+Sequelize:
+    - Sequelize is a JS library that we'll use to manage our PostgreSQL databases
+    - Sequelize is an object relational mapper (ORM) - meaning that it sends our data to our databases using JS syntax
+    - Sequelize is all about Models. Models are how we shape the data we'll be sending to our databases
+    -Our models are both the objects that we'll interact with in our application as well as the primary tables that we'll create and manage in our databases
+
+PG:
+    - The pg package allows us to write the dialect that sequelize needs to speak to our PostgreSQL databases.
+
+    -DB Connection URI: database://user:password@host:port/dbname
+
+authenticate():
+    -tests if the connection with the database is okay.
+    -returns a promise. If connection is good, we use the .sync() method to sync the models to our database
